@@ -15,9 +15,9 @@ const Navbar = () => {
   return (
     <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">
       <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#1c1c24] rounded-[100px]">
-        <input type="text" placeholder="Search for campaigns" className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-[#4b5264] text-white bg-transparent outline-none" />
+        <input type="text" placeholder="Search for EcoVentures" className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-[#4b5264] text-white bg-transparent outline-none" />
         
-        <div className="w-[72px] h-full rounded-[20px] bg-[#4acd8d] flex justify-center items-center cursor-pointer">
+        <div className="w-[72px] h-full rounded-[20px] bg-[#3FE0D0] flex justify-center items-center cursor-pointer">
           <img src={search} alt="search" className="w-[15px] h-[15px] object-contain"/>
         </div>
       </div>
@@ -25,12 +25,19 @@ const Navbar = () => {
       <div className="sm:flex hidden flex-row justify-end gap-4">
         <CustomButton 
           btnType="button"
-          title={address ? 'Create a campaign' : 'Connect'}
-          styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
+          title={address ? 'Create an EcoVenture' : 'Connect'}
+          styles={address ? 'bg-[#3FE0D0]' : 'bg-[#3FE0D0]'}
           handleClick={() => {
             if(address) navigate('create-campaign')
             else connect()
           }}
+        />
+
+        <CustomButton 
+          btnType="button"
+          title="Business"
+          styles="bg-[#3FE0D0]"
+          handleClick={() => navigate('/create-business')}
         />
 
         <Link to="/profile">
@@ -80,12 +87,19 @@ const Navbar = () => {
             <div className="flex mx-4">
             <CustomButton 
               btnType="button"
-              title={address ? 'Create a campaign' : 'Connect'}
-              styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
+              title={address ? 'Create an EcoVenture' : 'Connect'}
+              styles={address ? 'bg-[#3FE0D0]' : 'bg-[#3FE0D0]'}
               handleClick={() => {
                 if(address) navigate('create-campaign')
                 else connect();
               }}
+            />
+
+            <CustomButton 
+              btnType="button"
+              title="Business"
+              styles="bg-[#3FE0D0] ml-4"
+              handleClick={() => navigate('create-business')}
             />
             </div>
           </div>
